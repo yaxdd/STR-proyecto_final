@@ -1,10 +1,7 @@
 #include <stdint.h>											
 #include "PWM.h"												//Encabezado para usar PWM
 #include "TM4C129.h"                    // Device header
-#include "FreeRTOSConfig.h"             // ARM.FreeRTOS::RTOS:Config
-#include "FreeRTOS.h"                   // ARM.FreeRTOS::RTOS:Core
-#include "task.h"                       // ARM.FreeRTOS::RTOS:Core
-#include "semphr.h"    
+ 
 
 
 
@@ -27,7 +24,7 @@ int main(){
 	GPIOJ_AHB->PUR = 0x03;				//Resistencias pull up en pines 0 y 1
 	GPIOJ_AHB->AFSEL =0x00;				//Sin función especial
 	
-	PWM_config(0xFFFF,0x0001);		//Configura PWM en el maximo periodo con el minimo de duty cycle
+	PWM_config(0xFFFF,0xffff);		//Configura PWM en el maximo periodo con el minimo de duty cycle
 
 	
 	while(1){

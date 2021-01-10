@@ -1,0 +1,116 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.33.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Yael Diaz, UADY, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.33.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.15
+Assembler:       Armasm.exe V6.15
+Linker/Locator:  ArmLink.exe V6.15
+Library Manager: ArmAr.exe V6.15
+Hex Converter:   FromElf.exe V6.15
+CPU DLL:         SARMCM3.DLL V5.33.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+D:\GitHub\STR-proyecto_final\str.uvprojx
+Project File Date:  01/10/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.15', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+compiling system_TM4C129.c...
+assembling startup_TM4C129.s...
+PWM.c(8): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        while((SYSCTL_PRGPIO_R&SYSCTL_PRGPIO_R5) == 0){};                                                                       //Verifica que se activo el puerto
+                                                        ^
+PWM.c(11): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        GPIO_PORTF_PCTL_R               = (GPIO_PORTF_PCTL_R&0xFFFFFFF0)+0x00000006;;   //Funcion alternativa para salida de PWM0
+                                                                                    ^
+PWM.c(12): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTF_AMSEL_R &= ~0x01;                                                                                                                                                    //Desactiva funcion anal<F3>gica
+                           ~~ ^~~~~
+PWM.c(26): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+        actual = PWM0_0_CMPA_R;                                                                         //Toma valor actual de duty cycle
+               ~ ^~~~~~~~~~~~~
+./tm4c1294ncpdt.h(607): note: expanded from macro 'PWM0_0_CMPA_R'
+#define PWM0_0_CMPA_R           (*((volatile uint32_t *)0x40028058))
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PWM.c(29): warning: implicit conversion changes signedness: 'unsigned int' to 'int' [-Wsign-conversion]
+                actual = PWM0_0_LOAD_R -1;                                                      //Si se pasa del maximo se corrige con el valor maximo posible
+                       ~ ~~~~~~~~~~~~~~^~
+PWM.c(31): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+        PWM0_0_CMPA_R = actual;                                                                         //Carga valor de duty cycle
+                      ~ ^~~~~~
+PWM.c(28): warning: comparison of integers of different signs: 'int' and 'volatile uint32_t' (aka 'volatile unsigned int') [-Wsign-compare]
+        if(actual >= PWM0_0_LOAD_R){                                                    //Verifica que no se supere el m<E1>ximo valor
+           ~~~~~~ ^  ~~~~~~~~~~~~~
+PWM.c(37): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+        actual = PWM0_0_CMPA_R;                                                                         //Toma valor actual de duty cycle
+               ~ ^~~~~~~~~~~~~
+./tm4c1294ncpdt.h(607): note: expanded from macro 'PWM0_0_CMPA_R'
+#define PWM0_0_CMPA_R           (*((volatile uint32_t *)0x40028058))
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PWM.c(42): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+        PWM0_0_CMPA_R = actual;                                                                         //Carga valor de duty cycle
+                      ~ ^~~~~~
+9 warnings generated.
+compiling PWM.c...
+main.c(13): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        while((NVIC_ST_CTRL_R & NVIC_ST_CTRL_COUNT)==0){};
+                                                         ^
+main.c(14): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        NVIC_ST_CTRL_R &= ~NVIC_ST_CTRL_ENABLE; //Desactiva banderas
+                       ~~ ^~~~~~~~~~~~~~~~~~~~
+main.c(9): warning: no previous prototype for function 'retardo' [-Wmissing-prototypes]
+void retardo(uint32_t tiempo){
+     ^
+main.c(9): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void retardo(uint32_t tiempo){
+^
+static 
+3 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=964 RO-data=544 RW-data=4 ZI-data=608  
+".\str.axf" - 0 Error(s), 12 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil.TM4C_DFP.1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\system_TM4C129.c
+      Include file:  Device\Include\TM4C129\TM4C129.h
+      Source file:   Device\Source\ARM\startup_TM4C129.s
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
