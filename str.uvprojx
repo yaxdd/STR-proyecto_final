@@ -393,6 +393,26 @@
               <FileType>1</FileType>
               <FilePath>.\PWM.c</FilePath>
             </File>
+            <File>
+              <FileName>TIMERS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\TIMERS.c</FilePath>
+            </File>
+            <File>
+              <FileName>BTN.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BTN.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LCD.c</FilePath>
+            </File>
+            <File>
+              <FileName>SYSTICK.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SYSTICK.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

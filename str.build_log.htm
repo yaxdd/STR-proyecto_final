@@ -26,9 +26,7 @@ Project File Date:  01/10/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.15', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Target 1'
-compiling system_TM4C129.c...
-assembling startup_TM4C129.s...
+Build target 'Target 1'
 PWM.c(8): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
         while((SYSCTL_PRGPIO_R&SYSCTL_PRGPIO_R5) == 0){};                                                                       //Verifica que se activo el puerto
                                                         ^
@@ -53,35 +51,40 @@ PWM.c(31): warning: implicit conversion changes signedness: 'int' to 'uint32_t' 
 PWM.c(28): warning: comparison of integers of different signs: 'int' and 'volatile uint32_t' (aka 'volatile unsigned int') [-Wsign-compare]
         if(actual >= PWM0_0_LOAD_R){                                                    //Verifica que no se supere el m<E1>ximo valor
            ~~~~~~ ^  ~~~~~~~~~~~~~
-PWM.c(37): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+PWM.c(38): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
         actual = PWM0_0_CMPA_R;                                                                         //Toma valor actual de duty cycle
                ~ ^~~~~~~~~~~~~
 ./tm4c1294ncpdt.h(607): note: expanded from macro 'PWM0_0_CMPA_R'
 #define PWM0_0_CMPA_R           (*((volatile uint32_t *)0x40028058))
                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-PWM.c(42): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+PWM.c(43): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
         PWM0_0_CMPA_R = actual;                                                                         //Carga valor de duty cycle
                       ~ ^~~~~~
 9 warnings generated.
 compiling PWM.c...
-main.c(13): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
-        while((NVIC_ST_CTRL_R & NVIC_ST_CTRL_COUNT)==0){};
-                                                         ^
-main.c(14): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-        NVIC_ST_CTRL_R &= ~NVIC_ST_CTRL_ENABLE; //Desactiva banderas
-                       ~~ ^~~~~~~~~~~~~~~~~~~~
-main.c(9): warning: no previous prototype for function 'retardo' [-Wmissing-prototypes]
-void retardo(uint32_t tiempo){
+main.c(6): warning: In file included from...
+./LCD.h(82): warning: no newline at end of file [-Wnewline-eof]
+extern void LCD_setCursor(int,int);
+                                   ^
+main.c(7): warning: In file included from...
+./SYSTICK.h(4): warning: extra ';' outside of a function [-Wextra-semi]
+extern volatile uint32_t curTicks;;
+                                  ^
+main.c(23): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        NVIC_ST_CTRL_R &= ~(NVIC_ST_CTRL_ENABLE); //Desactiva banderas
+                       ~~ ^~~~~~~~~~~~~~~~~~~~~~
+main.c(25): warning: no previous prototype for function 'test' [-Wmissing-prototypes]
+void test(int ms)
      ^
-main.c(9): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void retardo(uint32_t tiempo){
+main.c(25): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void test(int ms)
 ^
 static 
-3 warnings generated.
+4 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=964 RO-data=544 RW-data=4 ZI-data=608  
-".\str.axf" - 0 Error(s), 12 Warning(s).
+Program Size: Code=2860 RO-data=544 RW-data=4 ZI-data=632  
+".\str.axf" - 0 Error(s), 13 Warning(s).
 
 <h2>Software Packages used:</h2>
 

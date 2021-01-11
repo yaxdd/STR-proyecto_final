@@ -29,6 +29,7 @@ void aumentar_duty_cycle(int valor){
 		actual = PWM0_0_LOAD_R -1;							//Si se pasa del maximo se corrige con el valor maximo posible
 	}
 	PWM0_0_CMPA_R = actual;										//Carga valor de duty cycle
+	
 }
 
 //Disminuye Duty cycle en la cantidad deseada
@@ -40,8 +41,14 @@ void disminuir_duty_cycle(int valor){
 		actual = 1;															//Si se pasa del mínimo se corrige con el valor mínimo posible
 	}			
 	PWM0_0_CMPA_R = actual;										//Carga valor de duty cycle
+	
 }
-
+void Max_duty_cycle(){
+	PWM0_0_CMPA_R = PWM0_0_LOAD_R -1;										//Carga valor de duty cycle
+}
+void Min_duty_cycle(){
+	PWM0_0_CMPA_R = 1;										//Carga valor de duty cycle
+}
 //Establece duty cycle en la cantidad deseada
 void Establecer_duty_cycle(uint16_t valor){
 	PWM0_0_CMPA_R = valor;										//Carga nuevo duty cycle

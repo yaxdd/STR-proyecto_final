@@ -1,8 +1,8 @@
 Dependencies for Project 'str', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6150000::V6.15::ARMCLANG
-F (.\main.c)(0x5FFB7DFF)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-D__UVISION_VERSION="533" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o ./main.o -MD)
+F (.\main.c)(0x5FFBB6D3)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-D__UVISION_VERSION="533" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o ./main.o -MD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F379588)
-I (PWM.h)(0x5FFBC91F)
+I (PWM.h)(0x5FFB9D36)
 I (tm4c1294ncpdt.h)(0x5FFBC91F)
 I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C129.h)(0x530F6376)
 I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C1294NCPDT.h)(0x530F6376)
@@ -13,10 +13,68 @@ I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cms
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1EC22)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F274C18)
 I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\system_TM4C129.h)(0x51C06F6A)
-F (.\PWM.c)(0x5FFBC91F)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-D__UVISION_VERSION="533" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o ./pwm.o -MD)
-I (PWM.h)(0x5FFBC91F)
+I (BTN.h)(0x5FBDF790)
+I (TIMERS.h)(0x5FBED38A)
+I (LCD.h)(0x5FFBB61A)
+I (SYSTICK.h)(0x5FBACEA1)
+F (.\PWM.c)(0x5FFB9DCF)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-D__UVISION_VERSION="533" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o ./pwm.o -MD)
+I (PWM.h)(0x5FFB9D36)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F379588)
 I (tm4c1294ncpdt.h)(0x5FFBC91F)
+F (.\TIMERS.c)(0x5FBFF35B)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-D__UVISION_VERSION="533" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o ./timers.o -MD)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C129.h)(0x530F6376)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C1294NCPDT.h)(0x530F6376)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F9602)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F379588)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F9602)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83CBA2)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F9602)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1EC22)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F274C18)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\system_TM4C129.h)(0x51C06F6A)
+I (TIMERS.h)(0x5FBED38A)
+F (.\BTN.c)(0x5FBF0B00)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-D__UVISION_VERSION="533" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o ./btn.o -MD)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C129.h)(0x530F6376)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C1294NCPDT.h)(0x530F6376)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F9602)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F379588)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F9602)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83CBA2)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F9602)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1EC22)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F274C18)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\system_TM4C129.h)(0x51C06F6A)
+I (BTN.h)(0x5FBDF790)
+F (.\LCD.c)(0x5FFBB636)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-D__UVISION_VERSION="533" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o ./lcd.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F379594)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x5F37958E)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F379588)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37958C)
+I (LCD.h)(0x5FFBB61A)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C129.h)(0x530F6376)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C1294NCPDT.h)(0x530F6376)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F9602)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F9602)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83CBA2)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F9602)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1EC22)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F274C18)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\system_TM4C129.h)(0x51C06F6A)
+F (.\SYSTICK.c)(0x5FBC9A7B)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-D__UVISION_VERSION="533" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o ./systick.o -MD)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C129.h)(0x530F6376)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\TM4C1294NCPDT.h)(0x530F6376)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F9602)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F379588)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F9602)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83CBA2)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F9602)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE1EC22)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F274C18)
+I (C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\system_TM4C129.h)(0x51C06F6A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F379594)
+I (SYSTICK.h)(0x5FBACEA1)
+I (C:\Keil_v5\ARM\ARMCLANG\include\inttypes.h)(0x5F37957E)
+I (LCD.h)(0x5FFBB61A)
 F (RTE\Device\TM4C1294NCPDT\startup_TM4C129.s)(0x51C06F6A)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto -c-gdwarf-3 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-Wa,armasm,--pd,"__UVISION_VERSION SETA 533" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"TM4C1294NCPDT SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./startup_tm4c129.o)
 F (RTE\Device\TM4C1294NCPDT\system_TM4C129.c)(0x52541CA4)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/yax_d/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/yax_d/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C129-D__UVISION_VERSION="533" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o ./system_tm4c129.o -MD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F379588)
