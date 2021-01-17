@@ -72,7 +72,7 @@ void debounceClock(){
 int main(){
 	//********************
 	BTN_Initialize(); // inicializamos los botones
-	PWM_config(0xFFFF,0x0001);		//Configura PWM en el maximo periodo con el minimo de duty cycle
+	PWM_config(60000,0x0001);		//Configura PWM en el maximo periodo con el minimo de duty cycle
 	initSysTick1ms();
 	LCD_Init();
 	LCD_Clear();

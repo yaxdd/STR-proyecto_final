@@ -62,29 +62,9 @@ PWM.c(43): warning: implicit conversion changes signedness: 'int' to 'uint32_t' 
                       ~ ^~~~~~
 9 warnings generated.
 compiling PWM.c...
-main.c(6): warning: In file included from...
-./LCD.h(82): warning: no newline at end of file [-Wnewline-eof]
-extern void LCD_setCursor(int,int);
-                                   ^
-main.c(7): warning: In file included from...
-./SYSTICK.h(4): warning: extra ';' outside of a function [-Wextra-semi]
-extern volatile uint32_t curTicks;;
-                                  ^
-main.c(23): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-        NVIC_ST_CTRL_R &= ~(NVIC_ST_CTRL_ENABLE); //Desactiva banderas
-                       ~~ ^~~~~~~~~~~~~~~~~~~~~~
-main.c(25): warning: no previous prototype for function 'test' [-Wmissing-prototypes]
-void test(int ms)
-     ^
-main.c(25): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void test(int ms)
-^
-static 
-4 warnings generated.
-compiling main.c...
 linking...
 Program Size: Code=2860 RO-data=544 RW-data=4 ZI-data=632  
-".\str.axf" - 0 Error(s), 13 Warning(s).
+".\str.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 
