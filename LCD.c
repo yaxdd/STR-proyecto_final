@@ -29,21 +29,39 @@ addr  00 01 02 03 04 05 ... 0F
 //INCIALIZACION DE LA LCD
 // Puertos K y M
 //Pines K0-K7,M0-M2
-void DelayUs(int ms)
+void DefDelayUs(int ms)
 {
     volatile int i;
     for (i = 0; i < ms; i++)
 		__NOP();
 //        for (j = 0; j <= 1; j++) {}   // // Do nothing for 1ms
 }
+void SysCtlDelay(uint32_t ui32Count)
+{
+    __asm("    subs    r0, #1\n"
+          "    bne.n   SysCtlDelay\n"
+          "    bx      lr");
+}
+int DelayUs(uint32_t ui32DelayUs)
+{
+ ui32DelayUs*=5;
+	// Limit the delay to max. 1 seconds.
+    if (ui32DelayUs > 1e7) ui32DelayUs = 1e7;
+    // CAUTION: Calling SysCtlDelay(0) will hang the system.
+    if (ui32DelayUs > 0)
+        // Note: The SysCtlDelay executes a simple 3 instruction cycle loop.
+        SysCtlDelay((SystemCoreClock / 3e6) * ui32DelayUs);
+
+    return 0;
+}
 void OutCmd(unsigned char command){
 	GPIOK->DATA = command;
   GPIOM->DATA = 0x00;           // E=0, R/W=0, RS=0
-	DelayUs(10);
+	DelayUs(6);
   GPIOM->DATA = 0x01;           // E=1, R/W=0, RS=0
-	DelayUs(10);
+	DelayUs(6);
   GPIOM->DATA = 0x00;           // E=0, R/W=0, RS=0
-	DelayUs(10);
+	DelayUs(6);
 }
 void LCD_Init(){
 	//	//INICIALIZACION DE PINES LCD
@@ -56,13 +74,13 @@ void LCD_Init(){
 	GPIOM->DEN|=0x07;
 	GPIOM->DR8R |= 0x07; 
 	GPIOM->DATA =0x00;
-	DelayUs(500);
+	DelayUs(15000);
 	OutCmd(0x30);         // command 0x30 = Wake up
-	delay(5);   // must wait 5ms, busy flag not available
+	DelayUs(5000);   // must wait 5ms, busy flag not available
   OutCmd(0x30);         // command 0x30 = Wake up #2
-  DelayUs(170);
+  DelayUs(160);
   OutCmd(0x30);         // command 0x30 = Wake up #3
-  DelayUs(170);
+  DelayUs(160);
   OutCmd(0x38);         // Function set: 8-bit/2-line
   OutCmd(0x10);         // Set cursor
   OutCmd(0x0C);         // Display ON; Cursor ON
@@ -70,18 +88,18 @@ void LCD_Init(){
 }
 void LCD_Clear(void){
   OutCmd(0x01);          // Clear Display
-  delay(2); // wait 1.6ms
+  DelayUs(1600); // wait 1.6ms
   OutCmd(0x02);          // Cursor to home
-  delay(2); // wait 1.6ms
+  DelayUs(1600); // wait 1.6ms
 }
 void LCD_OutChar(unsigned char letter){
   GPIOK->DATA = letter;
   GPIOM->DATA= 0x04;          // E=0, R/W=0, RS=1
-  DelayUs(20);
+  DelayUs(6);
   GPIOM->DATA= 0x05;        // E=1, R/W=0, RS=1
-  DelayUs(20);
+  DelayUs(6);
   GPIOM->DATA= 0x04;          // E=0, R/W=0, RS=1
-  DelayUs(20);
+  DelayUs(40);
 }
 
 void LCD_OutString(char *pt){
@@ -90,7 +108,6 @@ void LCD_OutString(char *pt){
     LCD_OutChar(*pt);
     pt++;
   }
-	
 }
 
 //-----------------------LCD_OutUDec-----------------------
@@ -138,14 +155,14 @@ void LCD_OutUHex(uint32_t number){
 
 void LCD_ReturnHome(){
   OutCmd(0x02);          // Cursor to home
-  delay(2); // wait 1.6ms
+  DelayUs(1600); // wait 1.6ms
 }
 void LCD_setCursor(int f, int k){
 	OutCmd(0x02);          // Cursor to home
-  delay(2); // wait 1.6ms
+  DelayUs(1600); // wait 1.6ms
 	for (int i = 0;i<(40*k)+f;i++){
 		OutCmd(0x14);          // Cursor to home
-		delay(2); // wait 1.6ms
+		DelayUs(1600); // wait 1.6ms
 	}
 	
 }

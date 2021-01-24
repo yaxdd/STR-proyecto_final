@@ -5,15 +5,18 @@
 #include "TIMERS.h"
 #include "LCD.h"
 #include "SYSTICK.h"
+#include "Serial.h"
+#include "ENCODER.h"
 //--------------------------------------------------
 //--------------Prototipos--------------------------
 void delay_sync(uint32_t);
 void handleButtons(uint32_t);
 void debounceClock(void);
+void measureTime(void);
 //--------------------------------------------------
 static uint32_t debounceTicks;
 static const uint32_t debouncePeriod = 2;
-
+static int pulses = 0, currentSpeed = 0, userSpeed = 60;
 //Retardo de systick para testeo
 void delay_sync(uint32_t tiempo){
 	NVIC_ST_CURRENT_R = 0X000000; //estado actual
@@ -22,13 +25,7 @@ void delay_sync(uint32_t tiempo){
 	while((NVIC_ST_CTRL_R & NVIC_ST_CTRL_COUNT)==0){}
 	NVIC_ST_CTRL_R &= ~(NVIC_ST_CTRL_ENABLE); //Desactiva banderas
 }
-void test(int ms)
-{
-    volatile int i;
-    for (i = 0; i < ms; i++)
-		__NOP();
-//        for (j = 0; j <= 1; j++) {}   // // Do nothing for 1ms
-}
+
 void handleButtons(){
 	Start_Timer0();
 	BTN_DisableInt();	
@@ -44,9 +41,18 @@ void debounceClock(){
 		//volvemos a valir que se haya mantenido presionado
 			if (btns>0){
 				if (btns == 1){
-					aumentar_duty_cycle(1000);
+					if (userSpeed+3>102){
+						userSpeed = 102;
+					}else {
+						userSpeed+=3;
+					}
 				}	else if (btns == 2 ){
-					disminuir_duty_cycle(1000);
+					
+					if (userSpeed-3<0){
+						userSpeed = 0;
+					}else {
+						userSpeed-=3;	
+					}
 				} else if (btns == 3){
 					Min_duty_cycle();
 				} else if (btns == 4) {
@@ -68,26 +74,58 @@ void debounceClock(){
 		BTN_EnableInt();
 	}
 }
+
+
+
+void measureTime(){
+	currentSpeed = measure_Speed(pulses);
+			//while
+	if(currentSpeed - 5 <= userSpeed){
+		aumentar_duty_cycle(800);
+	}else if(currentSpeed + 5 >= userSpeed){
+		disminuir_duty_cycle(800);
+	}
+			//end while
+	
+	SER_OutString("Vel esperada : ");
+	SER_PutDec((uint32_t)userSpeed);
+	SER_PutChar('\n');
+	SER_OutString("Vel real : ");
+	SER_PutDec((uint32_t)currentSpeed);
+	SER_PutChar('\n');
+	
+	LCD_OutString("Vel esp :       ");
+	LCD_setCursor(10,0);
+	LCD_OutUDec((uint32_t)userSpeed);
+	LCD_setCursor(0,1);
+	LCD_OutString("Vel real:       ");
+	LCD_setCursor(11,1);
+	LCD_OutUDec((uint32_t)currentSpeed);
+	LCD_ReturnHome();
+	
+	pulses = 0;
+}
 //Main de prueba
 int main(){
 	//********************
 	BTN_Initialize(); // inicializamos los botones
+	SER_Initialize();
 	PWM_config(60000,0x0001);		//Configura PWM en el maximo periodo con el minimo de duty cycle
 	initSysTick1ms();
+	init_Encoder();
 	LCD_Init();
 	LCD_Clear();
 	//********************
 	// Interrupciones
 	BTN_SetupInt(handleButtons); // activamos las interupciones de los botones
 	Init_Timer0(debounceClock,50); // activamos las interupciones del timer 0, 1 y 2
-	
+	Init_Timer2(measureTime,500);
+	Start_Timer2();
 	while(1){
-	LCD_OutString("Vel ini : ");
-	LCD_OutUDec(PWM0_0_CMPA_R);
-	//LCD_setCursor(0,1);
-	//LCD_OutString("Vel real: ");
-	LCD_ReturnHome();
 	
+	if(check_Encoder() == 1){
+			pulses++;									    //Aumenta pulsos.
+		}
 	}
 
 	
