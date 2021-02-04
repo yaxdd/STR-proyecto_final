@@ -27,22 +27,20 @@ Project File Date:  01/17/2021
 <h2>Output:</h2>
 *** Using Compiler 'V6.15', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
+ENCODER.c(17): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+        data = GPIOD_AHB->DATA;                                                                                                                  //Obtengo dato de N0.
+             ~ ~~~~~~~~~~~^~~~
+1 warning generated.
+compiling ENCODER.c...
 main.c(6): warning: In file included from...
-./LCD.h(82): warning: no newline at end of file [-Wnewline-eof]
-extern void LCD_setCursor(int,int);
-                                   ^
-main.c(7): warning: In file included from...
-./SYSTICK.h(4): warning: extra ';' outside of a function [-Wextra-semi]
-extern volatile uint32_t curTicks;;
+./LCD.h(12): warning: no newline at end of file [-Wnewline-eof]
+extern void OutCmd(unsigned char);
                                   ^
-main.c(26): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
-        NVIC_ST_CTRL_R &= ~(NVIC_ST_CTRL_ENABLE); //Desactiva banderas
-                       ~~ ^~~~~~~~~~~~~~~~~~~~~~
-3 warnings generated.
+1 warning generated.
 compiling main.c...
 linking...
-Program Size: Code=3708 RO-data=544 RW-data=8 ZI-data=648  
-".\str.axf" - 0 Error(s), 3 Warning(s).
+Program Size: Code=3260 RO-data=544 RW-data=8 ZI-data=648  
+".\str.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -68,10 +66,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.0
+      Include file:  Device\Include\TM4C129\TM4C129.h
       Source file:   Device\Source\ARM\startup_TM4C129.s
       Source file:   Device\Source\system_TM4C129.c
-      Include file:  Device\Include\TM4C129\TM4C129.h
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

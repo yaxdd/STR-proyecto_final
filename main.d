@@ -9,4 +9,4 @@
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
   C:\Users\yax_d\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129\system_TM4C129.h \
-  BTN.h TIMERS.h LCD.h SYSTICK.h Serial.h ENCODER.h
+  BTN.h TIMERS.h LCD.h ENCODER.h
